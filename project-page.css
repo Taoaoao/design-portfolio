@@ -31,6 +31,14 @@
     line-height: 1.7;
 }
 
+.project-subtitle-h2 {
+    font-size: 1.375rem;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
 /* Hero Image */
 .hero-image {
     padding: 3rem 0 4rem;
@@ -44,7 +52,7 @@
 
 /* Content Sections */
 .content-section {
-    padding: 4rem 0;
+    padding: 2rem 0 0.5rem;
 }
 
 .content-section h2 {
@@ -108,7 +116,11 @@
 
 /* Image Sections */
 .image-section {
-    padding: 5rem 0;
+    padding: 0.5rem 0 5rem;
+}
+
+.image-section .container-narrow {
+    max-width: 1000px;
 }
 
 .image-section.dark-bg {
@@ -119,6 +131,12 @@
     width: 100%;
     height: auto;
     display: block;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.image-section img:hover {
+    opacity: 0.9;
 }
 
 .full-width-image {
@@ -192,6 +210,87 @@
     left: 0;
     color: #2B689C;
     font-weight: bold;
+}
+
+/* Results List */
+.results-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.results-list li {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-weight: 250;
+}
+
+.results-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2B689C;
+    font-weight: bold;
+}
+
+/* Lightbox Overlay */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    cursor: zoom-out;
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.lightbox-overlay img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    cursor: default;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    line-height: 1;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-close:hover {
+    opacity: 0.7;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Responsive Design for Project Pages */

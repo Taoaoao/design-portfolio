@@ -234,5 +234,55 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Lightbox functionality
+        (function() {
+            // Create lightbox overlay
+            const overlay = document.createElement('div');
+            overlay.className = 'lightbox-overlay';
+            overlay.innerHTML = '<button class="lightbox-close" aria-label="Close">×</button>';
+            document.body.appendChild(overlay);
+
+            // Get all images in image sections
+            const images = document.querySelectorAll('.image-section img, .full-width-image');
+
+            images.forEach(img => {
+                img.addEventListener('click', function() {
+                    const lightboxImg = document.createElement('img');
+                    lightboxImg.src = this.src;
+                    lightboxImg.alt = this.alt;
+
+                    // Remove any existing image in overlay
+                    const existingImg = overlay.querySelector('img');
+                    if (existingImg) existingImg.remove();
+
+                    overlay.appendChild(lightboxImg);
+                    overlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Close lightbox
+            function closeLightbox() {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            // Click outside image to close
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay || e.target.classList.contains('lightbox-close')) {
+                    closeLightbox();
+                }
+            });
+
+            // ESC key to close
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && overlay.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
