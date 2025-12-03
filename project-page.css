@@ -73,8 +73,8 @@
 }
 
 .content-section p {
-    font-size: 1.0625rem;
-    font-weight: 250;
+    font-size: 1.125rem;
+    font-weight: 400;
     line-height: 1.6;
     color: #333;
     margin-bottom: 1.5rem;
@@ -220,13 +220,13 @@
 }
 
 .results-list li {
-    font-size: 1.0625rem;
+    font-size: 1.125rem;
     line-height: 1.8;
     color: #333;
     margin-bottom: 0.75rem;
     padding-left: 1.5rem;
     position: relative;
-    font-weight: 250;
+    font-weight: 400;
 }
 
 .results-list li:before {
