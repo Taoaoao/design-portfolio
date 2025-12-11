@@ -139,6 +139,24 @@ a {
     flex: 0 0 42%;
 }
 
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    margin-top: -0.5rem;
+}
+
+.project-tags .tag {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #5a7f9c;
+    font-weight: 400;
+    background-color: #e8f1f7;
+    padding: 0.25rem 0.55rem;
+    border-radius: 8px;
+}
+
 .project-image {
     flex: 1;
 }
@@ -286,8 +304,12 @@ a {
     }
 
     .project-content {
-        flex-direction: column !important;
+        flex-direction: column-reverse;
         gap: 3rem;
+    }
+
+    .project.reverse .project-content {
+        flex-direction: column;
     }
 
     .project-text {

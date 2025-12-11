@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TED App - Yitao Wang</title>
+    <title>Harvest Mobile - Yitao Wang</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="project-page.css">
 </head>
@@ -33,77 +33,80 @@
         <!-- Hero Section -->
         <section class="project-hero">
             <div class="container-narrow">
-                <h1>TED App</h1>
-                <h2 class="project-subtitle-h2">Dual subtitles doubled viewing time for non-English speakers</h2>
+                <h1>Harvest Mobile</h1>
+                <h2 class="project-subtitle-h2">50% daily feature adoption, app store ratings from 4.3 to 4.5</h2>
             </div>
         </section>
 
-        <!-- Introduction -->
+        <!-- The Problem -->
         <section class="content-section">
             <div class="container-narrow">
-                <p>I led international UX research across 13 languages to understand why TED's global users were dropping off. The insight: non-native English speakers were pausing constantly to look up words, interrupting their viewing experience. I designed a dual-subtitle feature that displays both English and the user's native language simultaneously—a simple solution that doubled time spent in the app for this audience.</p>
+                <h2>The problem</h2>
+                <p>Harvest is a time-tracking and invoicing SaaS tool used by 70K+ customers, and many rely on its mobile app to track time on the go. The mobile app had been neglected for years—outdated UI and missing features that competitors had long shipped. I led the product and design strategy to modernize it.</p>
             </div>
         </section>
 
-        <!-- The Challenge -->
+        <!-- Research -->
         <section class="content-section">
             <div class="container-narrow">
-                <h2>The challenge</h2>
-                <p>TED's app had strong international adoption, but engagement lagged. With more than 80% of all users located outside the US, and with almost all TED Talks spoken in English, we suspected language barriers were the culprit.</p>
+                <h2>Research</h2>
+                <p>I led a multi-method research effort—competitive analysis, behavioral data review, surveys (89 responses), and interviews (7 users)—to understand the gap between how customers were using Harvest mobile and how they wanted to use it.</p>
+                <p>The research surfaced that regular mobile users valued the app for quick, interstitial moments—logging forgotten time after work, tracking while away from their desk. For them, speed and ease were everything.</p>
+                <p>The competitive analysis added urgency. Two of three direct competitors had higher app store ratings, with more modern UI and deeper native platform integration.</p>
             </div>
         </section>
 
-        <!-- What I Did -->
+        <!-- Streamlined Time Entry -->
         <section class="content-section">
             <div class="container-narrow">
-                <h2>What I did</h2>
-                <p>Based on users' app and subtitles language settings, we estimated that 70% of app users are non-native English speakers, and 20% of them are English-learners. With this in mind, I led the research and spoke to 30 users representing 13 languages.</p>
-                <p>The consistent finding: Non-native English speakers always require local subtitles to fully enjoy TED talks. More interestingly, English learners, even when they set their subtitle language to English for learning purposes, still desire instant access to their native subtitle language to successfully follow along.</p>
-                <p>Existing solutions forced a choice—English OR translated subtitles—which satisfied neither goal.</p>
+                <h2>Streamlined time entry</h2>
+                <p>Usage data showed that most logged durations clustered around a few common intervals. Instead of requiring manual input every time, I explored surfacing frequent options as one-tap presets.</p>
+                <p>I tested several approaches. Slider and wheel interfaces seemed intuitive but added confusion in testing—users struggled to land on precise values. Preset buttons won: faster, less error-prone, immediately understandable. No competitor had implemented this pattern.</p>
             </div>
         </section>
 
-        <!-- The Solution -->
-        <section class="content-section">
-            <div class="container-narrow">
-                <h2>The solution</h2>
-                <p><strong>Dual subtitles:</strong> native language on top, English below. We also made it clear that users can choose whether they'd like to keep the English subtitles when their preferred subtitle language isn't available yet.</p>
-                <p><strong>Smart homepage feed:</strong> adapts the TED Talks we show based on users' English proficiency, inferred from their app and subtitle language settings. <em>The outcome of this feature wasn't measured due to a re-org.</em></p>
-                <p>I validated the prototype with users in China, Japan, and Korea before shipping, and received all green lights to go.</p>
-            </div>
-        </section>
-
-        <!-- Image 1: Dual Subtitle Design -->
-        <section class="image-section reduced-spacing">
-            <div class="container-narrow">
-                <img src="images/dualsub.avif" alt="Dual subtitle feature showing native language on top and English below" class="full-width-image">
-                <p class="image-caption">Dual subtitles settings in Android.</p>
-            </div>
-        </section>
-
-        <!-- Image 2: Smart Homepage -->
+        <!-- Image: Quick Time Tracking Buttons -->
         <section class="image-section">
             <div class="container-narrow">
-                <img src="images/smart_homepage.avif" alt="How home screen content adapts to app language settings" class="full-width-image">
-                <p class="image-caption">How home screen content adapts to app language settings.</p>
+                <img src="images/harvest_quick_time_buttons.png" alt="Quick time tracking preset buttons interface" class="full-width-image">
+                <p class="image-caption">Quick time tracking preset buttons.</p>
             </div>
         </section>
 
-        <!-- Results -->
+        <!-- Design System and Dark Mode -->
+        <section class="content-section">
+            <div class="container-narrow">
+                <h2>Design system and dark mode</h2>
+                <p>To unify mobile with web, I adapted Harvest's design system "Porchlight" for iOS and Android. The complication: Porchlight was built for light mode only, and several brand colors failed contrast checks on dark backgrounds. Since existing apps already support dark mode, we deemed supporting it part of our MVP.</p>
+                <p>I faced an early architectural decision—create a parallel dark mode token set, or modify Porchlight's core colors. A separate system would be faster to ship but create long-term maintenance burden and inevitable drift. Modifying Porchlight meant slower alignment across teams but a single source of truth.</p>
+                <p>I pushed for the latter. Through experimentation, I developed adjusted color values that passed accessibility requirements while staying on-brand. These changes were folded back into Porchlight, benefiting the entire Harvest product ecosystem.</p>
+            </div>
+        </section>
+
+        <!-- Image: Mobile Comparison Before and After -->
+        <section class="image-section reduced-spacing">
+            <div class="container-narrow">
+                <img src="images/Color_system.png" alt="Mobile app color system" class="full-width-image">
+                <p class="image-caption">Example of the color system for light and dark modes.</p>
+            </div>
+        </section>
+
+        <!-- Image: Mobile Design System -->
+        <section class="image-section">
+            <div class="container-narrow">
+                <img src="images/Design_components.png" alt="Harvest mobile design system components" class="full-width-image">
+                <p class="image-caption">Example of the Harvest mobile design system components.</p>
+            </div>
+        </section>
+
+        <!-- Outcomes -->
         <section class="content-section">
             <div class="container-narrow">
                 <h2>Outcomes</h2>
                 <ul class="results-list">
-                    <li>2× time spent by non-English users with dual subtitles feature enabled, one year post-launch</li>
-                    <li>Dual subtitles became one of the app's highest-rated features in app store reviews</li>
+                    <li>In a year post-launch, the quick time tracking pre-set buttons are used by 50% of mobile time trackers every day</li>
+                    <li>Increased app ratings from 4.3 to 4.5 on iOS</li>
                 </ul>
-            </div>
-        </section>
-
-        <!-- Image 2: App Reviews -->
-        <section class="image-section">
-            <div class="container-narrow">
-                <img src="images/app_reviews.png" alt="App store reviews highlighting the dual subtitles feature" class="full-width-image">
             </div>
         </section>
     </main>
