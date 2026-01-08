@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harvest Forecast - Yitao Wang</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project-page.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <svg width="63" height="18" viewBox="0 0 63 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 2.415C0 1.561 0 1.134.169.809a1.5 1.5 0 0 1 .64-.64C1.134 0 1.56 0 2.415 0h13.17c.854 0 1.281 0 1.607.169a1.5 1.5 0 0 1 .64.64C18 1.134 18 1.56 18 2.415v3.17c0 .854 0 1.281-.169 1.606a1.5 1.5 0 0 1-.64.64C16.867 8 16.44 8 15.586 8H12.75v8.085c0 .854 0 1.281-.169 1.607a1.5 1.5 0 0 1-.64.64c-.325.168-.752.168-1.606.168h-2.67c-.854 0-1.281 0-1.606-.169a1.5 1.5 0 0 1-.64-.64c-.169-.325-.169-.752-.169-1.606V8H2.415c-.854 0-1.281 0-1.606-.169a1.5 1.5 0 0 1-.64-.64C0 6.866 0 6.44 0 5.585v-3.17zM62 9a9 9 0 1 1-18 0 9 9 0 0 1 18 0zM27.979 3.8c.91-1.575 1.364-2.363 1.957-2.627a2 2 0 0 1 1.628 0c.593.264 1.048 1.052 1.957 2.627l5.5 9.525c.909 1.575 1.364 2.363 1.296 3.01a2 2 0 0 1-.814 1.408c-.525.382-1.435.382-3.254.382H25.251c-1.82 0-2.729 0-3.254-.382a2 2 0 0 1-.814-1.409c-.068-.646.387-1.434 1.297-3.009L27.979 3.8z" fill="#2B689C"/>
+                    </svg>
+                </a>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="index.html#work">WORK</a></li>
+                        <li><a href="index.html#about">ABOUT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="project-page">
+        <!-- Hero Section -->
+        <section class="project-hero">
+            <div class="container-narrow">
+                <h1>Forecast: Schedule by Week and Month</h1>
+                <h2 class="project-subtitle-h2">42% churn reduction by rethinking how teams plan</h2>
+            </div>
+        </section>
+
+        <!-- Introduction -->
+        <section class="content-section">
+            <div class="container-narrow">
+                <p>Forecast is Harvest's sister app—a resource planning tool with $3.66M in ARR. After 7 years in maintenance mode, 2024 marked its relaunch with a company goal to grow customer counts. I led the product strategy for the feature Schedule by Week and Month—addressing our biggest adoption blocker. The feature helped cut churn by 42% and improved NPS from 0.5 to 24.5.</p>
+            </div>
+        </section>
+
+        <!-- The Problem -->
+        <section class="content-section">
+            <div class="container-narrow">
+                <h2>The problem</h2>
+                <p>Forecast only supported day-level scheduling. Through customer research, I learned that many teams don't plan at the granularity of days at all.</p>
+                <p>5 of 8 customers who tried Forecast but didn't adopt said they schedule by week or month. This was the 2nd most mentioned missing feature in cancellation reasons.</p>
+                <p>Historically, the need to "zoom out more" was the 3rd most requested feature in customer support tickets. Without digging further, we would have blindly shown more days on screen, misunderstanding the fundamental need to plan at a totally different level.</p>
+            </div>
+        </section>
+
+        <!-- Deciding What to Build First -->
+        <section class="content-section">
+            <div class="container-narrow">
+                <h2>Deciding what to build first</h2>
+                <p>Task-level planning was the #1 cancellation reason. Week/month planning was #2. Both had strong demand—which should we prioritize?</p>
+                <p>Our company goal was to increase Forecast customer counts, which meant acquisition mattered more than retention. Task planning was a retention risk—existing customers wanted it. Week/month planning was an adoption blocker—prospects couldn't even start using Forecast because it didn't match how they worked.</p>
+                <p>To grow customer counts, we needed to remove adoption barriers first. We prioritized week/month view, then shipped task planning the following year.</p>
+            </div>
+        </section>
+
+        <!-- Evolving the Interaction Model -->
+        <section class="content-section">
+            <div class="container-narrow">
+                <h2>Evolving the interaction model</h2>
+                <p>My original design gave each project a "type"—day, week, or month—and users could only manage project assignments at that level. I thought this could be a useful constraint that "forced" users to plan at the intended level, and the assignment durations could all stay nice and tidy.</p>
+                <p>During a design critique, I was challenged that this could be an "one-way door" decision. After testing with customers, I realized my original concept optimized for tidiness at the expense of real workflows. Users would encounter confusing restrictions—unable to edit certain projects in "unmatched" views, with no clear reason why.</p>
+                <p>The final design: any project can be scheduled and edited at any granularity, in any view. Users have full flexibility to adapt as their planning needs change.</p>
+            </div>
+        </section>
+
+        <!-- Image: Before/After Comparison -->
+        <section class="image-section">
+            <div class="container-narrow">
+                <div class="image-grid">
+                    <img src="images/forecast_before_1.png" alt="Week view - before showing restrictive project type model">
+                    <img src="images/forecast_before_2.png" alt="Day view - before showing restrictive project type model">
+                </div>
+                <p class="image-caption">Original: Required to switch to Day view to edit a "Day type" project.</p>
+
+                <img src="images/forecast_week_view_after.png" alt="Final design showing flexible assignment editing across all views" class="full-width-image">
+                <p class="image-caption">Final: Flexible assignment viewing and editing across all views.</p>
+            </div>
+        </section>
+
+        <!-- Shipping in Time for GTM -->
+        <section class="content-section">
+            <div class="container-narrow">
+                <h2>Shipping in time for GTM</h2>
+                <p>Week view took 4 months to build—longer than expected. The bottleneck was performance: all heatmaps were calculated client-side, and rendering 7x more assignments caused significant delays for large accounts.</p>
+                <p>Month view would make this worse. After seeing what happened with week view, I brought engineering and design together to discuss how we could pre-empt this risk. The team came up with a great idea to aggregate assignments in month view by default, only expanding on user action to reduce the initial render load.</p>
+                <p>I proposed phasing the rollout to hit our October GTM deadline:</p>
+                <ul class="results-list">
+                    <li><strong>V1:</strong> View-only month view</li>
+                    <li><strong>V2:</strong> Create and edit monthly assignments</li>
+                    <li><strong>V3:</strong> Fully editable for all assignment types</li>
+                </ul>
+                <p class="extra-margin-top">We debated whether V1 alone was enough for GTM. I pushed for V2 as the minimum—a view-only month didn't mirror how users actually work. V2 was successfully shipped 5 days before the GTM soft launch, and the relaunch drove 300+ new connected trials in less than 24 hours.</p>
+            </div>
+        </section>
+
+        <!-- Outcomes -->
+        <section class="content-section">
+            <div class="container-narrow">
+                <h2>Outcomes</h2>
+                <ul class="results-list">
+                    <li>42% reduction in churn rate (from 4.3% to 2.51%) within a year</li>
+                    <li>NPS improved from 0.5 to 24.5 over 4 months</li>
+                    <li>132% YoY increase in weekly view users</li>
+                    <li>60% increase in users creating non-daily assignments</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Reflections -->
+        <section class="content-section">
+            <div class="container-narrow">
+                <h2>Reflections</h2>
+                <p><strong>On prioritization:</strong> User requests don't come with business context attached. Task planning was louder in cancellation surveys, but week/month planning was the bigger barrier to growth. Mapping user pain to business levers changed which problem we solved first.</p>
+                <p><strong>On iteration:</strong> The "project type" model felt elegant in the abstract but created friction in practice. Getting challenged in critique—and staying open to being wrong—led to a simpler design.</p>
+                <p><strong>On shipping:</strong> The phased approach let us hit a hard deadline without sacrificing the minimum viable experience. Knowing the difference between "good enough" and "not enough" was what let us ship quality products on time.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">🌈 2026 by Yitao Wang</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="9" stroke="#999" stroke-width="1.5"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="9" stroke="#999" stroke-width="1.5"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Medium">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="9" stroke="#999" stroke-width="1.5"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lightbox functionality
+        (function() {
+            // Create lightbox overlay
+            const overlay = document.createElement('div');
+            overlay.className = 'lightbox-overlay';
+            overlay.innerHTML = '<button class="lightbox-close" aria-label="Close">×</button>';
+            document.body.appendChild(overlay);
+
+            // Get all images in image sections
+            const images = document.querySelectorAll('.image-section img, .full-width-image');
+
+            images.forEach(img => {
+                img.addEventListener('click', function() {
+                    const lightboxImg = document.createElement('img');
+                    lightboxImg.src = this.src;
+                    lightboxImg.alt = this.alt;
+
+                    // Remove any existing image in overlay
+                    const existingImg = overlay.querySelector('img');
+                    if (existingImg) existingImg.remove();
+
+                    overlay.appendChild(lightboxImg);
+                    overlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Close lightbox
+            function closeLightbox() {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            // Click outside image to close
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay || e.target.classList.contains('lightbox-close')) {
+                    closeLightbox();
+                }
+            });
+
+            // ESC key to close
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && overlay.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
