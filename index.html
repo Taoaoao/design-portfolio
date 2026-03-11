@@ -8,6 +8,19 @@
 </head>
 <body>
 
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <svg width="63" height="18" viewBox="0 0 63 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 2.415C0 1.561 0 1.134.169.809a1.5 1.5 0 0 1 .64-.64C1.134 0 1.56 0 2.415 0h13.17c.854 0 1.281 0 1.607.169a1.5 1.5 0 0 1 .64.64C18 1.134 18 1.56 18 2.415v3.17c0 .854 0 1.281-.169 1.606a1.5 1.5 0 0 1-.64.64C16.867 8 16.44 8 15.586 8H12.75v8.085c0 .854 0 1.281-.169 1.607a1.5 1.5 0 0 1-.64.64c-.325.168-.752.168-1.606.168h-2.67c-.854 0-1.281 0-1.606-.169a1.5 1.5 0 0 1-.64-.64c-.169-.325-.169-.752-.169-1.606V8H2.415c-.854 0-1.281 0-1.606-.169a1.5 1.5 0 0 1-.64-.64C0 6.866 0 6.44 0 5.585v-3.17zM62 9a9 9 0 1 1-18 0 9 9 0 0 1 18 0zM27.979 3.8c.91-1.575 1.364-2.363 1.957-2.627a2 2 0 0 1 1.628 0c.593.264 1.048 1.052 1.957 2.627l5.5 9.525c.909 1.575 1.364 2.363 1.296 3.01a2 2 0 0 1-.814 1.408c-.525.382-1.435.382-3.254.382H25.251c-1.82 0-2.729 0-3.254-.382a2 2 0 0 1-.814-1.409c-.068-.646.387-1.434 1.297-3.009L27.979 3.8z" fill="#2B689C"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
@@ -24,10 +37,10 @@
                 <div class="projects-grid">
 
                 <!-- Project 1: Harvest Forecast — featured, full width -->
-                <article class="project project-featured">
+                <a href="harvest-forecast.html" class="project project-featured">
                     <div class="project-content">
                         <div class="project-text">
-                            <h2><a href="harvest-forecast.html">Harvest Forecast</a></h2>
+                            <h2>Harvest Forecast</h2>
                             <div class="project-tags">
                                 <span class="tag">B2B</span>
                                 <span class="tag">SaaS</span>
@@ -36,23 +49,19 @@
                             <p>I led the product strategy for Forecast's week and month scheduling feature—removing the biggest adoption blocker and helping drive a 42% churn reduction, NPS from 0.5 to 24.5, and 60% growth in non-daily assignment adoption.</p>
                         </div>
                         <div class="project-image">
-                            <a href="harvest-forecast.html">
-                                <img src="images/harvest_forecast_hero.png" alt="Harvest Forecast - Monthly capacity view showing team resource planning">
-                            </a>
+                            <img src="images/harvest_forecast_hero.png" alt="Harvest Forecast - Monthly capacity view showing team resource planning">
                         </div>
                     </div>
-                </article>
+                </a>
 
                 <!-- Project 2: Harvest Mobile — wide secondary card -->
-                <article class="project project-wide">
+                <a href="harvest-mobile.html" class="project project-wide">
                     <div class="project-content">
                         <div class="project-image">
-                            <a href="harvest-mobile.html">
-                                <img src="images/Harvest_mobile_cover.png" alt="Harvest Mobile - Time tracking app with quick time entry, favorites, and weekly overview">
-                            </a>
+                            <img src="images/Harvest_mobile_cover.png" alt="Harvest Mobile - Time tracking app with quick time entry, favorites, and weekly overview">
                         </div>
                         <div class="project-text">
-                            <h2><a href="harvest-mobile.html">Harvest Mobile</a></h2>
+                            <h2>Harvest Mobile</h2>
                             <div class="project-tags">
                                 <span class="tag">Product strategy</span>
                                 <span class="tag">Design system</span>
@@ -60,18 +69,16 @@
                             <p>I led product and design strategy to modernize Harvest's mobile app—introducing a core tracking interaction with 50% daily adoption and lifting app store ratings from 4.3 to 4.5.</p>
                         </div>
                     </div>
-                </article>
+                </a>
 
                 <!-- Project 3: TED App — narrow secondary card -->
-                <article class="project project-narrow">
+                <a href="ted-app.html" class="project project-narrow">
                     <div class="project-content">
                         <div class="project-image">
-                            <a href="ted-app.html">
-                                <img src="images/dual_sub_thumb_trans.avif" alt="TED App - Multiple mobile screens showing app features">
-                            </a>
+                            <img src="images/dual_sub_thumb_trans.avif" alt="TED App - Multiple mobile screens showing app features">
                         </div>
                         <div class="project-text">
-                            <h2><a href="ted-app.html">TED App</a></h2>
+                            <h2>TED App</h2>
                             <div class="project-tags">
                                 <span class="tag">B2C</span>
                                 <span class="tag">Mobile</span>
@@ -80,7 +87,7 @@
                             <p>I led an international user research study spanning 13 languages and cultures. The dual subtitles feature successfully doubled the time spent by TED's non-English users.</p>
                         </div>
                     </div>
-                </article>
+                </a>
 
             </div>
             </div>
@@ -95,5 +102,16 @@
             </div>
         </div>
     </footer>
+    <script>
+        (function() {
+            const header = document.querySelector('.header');
+            let lastY = 0;
+            window.addEventListener('scroll', function() {
+                const y = window.scrollY;
+                header.classList.toggle('hidden', y > lastY && y > 80);
+                lastY = y;
+            }, { passive: true });
+        })();
+    </script>
 </body>
 </html>
