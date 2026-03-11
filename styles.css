@@ -11,7 +11,7 @@ body {
     font-weight: 400;
     line-height: 1.6;
     color: #2c2c2c;
-    background-color: #ffffff;
+    background-color: #f6f6f6;
 }
 
 h1, h2, h3 {
@@ -123,24 +123,79 @@ a {
     padding: 4rem 0 10rem;
 }
 
+/* Asymmetric 12-column bento grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 4rem;
+    align-items: start;
+}
+
+.project-featured { grid-column: span 12; }
+.project-wide     { grid-column: span 12; }
+.project-narrow   { grid-column: span 12; }
+
+/* Card base */
 .project {
-    margin-bottom: 12rem;
+    background-color: #ffffff;
+    border-radius: 16px;
+    height: 450px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
 }
 
-.project:last-child {
-    margin-bottom: 0;
+.project:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.09);
 }
 
-.project-content {
+/* All cards: padded, horizontal layout */
+.project-featured,
+.project-wide,
+.project-narrow {
+    padding: 2.75rem 2.5rem 2.75rem 3rem;
+}
+
+.project-featured .project-content,
+.project-wide .project-content,
+.project-narrow .project-content {
     display: flex;
     gap: 3rem;
     align-items: center;
+    height: 100%;
 }
 
-.project-text {
-    flex: 0 0 42%;
+/* All cards: same text/image split — image 52%, text fills rest */
+.project-featured .project-text,
+.project-wide .project-text,
+.project-narrow .project-text {
+    flex: 1;
 }
 
+.project-featured .project-image,
+.project-wide .project-image,
+.project-narrow .project-image {
+    flex: 0 0 52%;
+}
+
+/* Wide card: row-reverse so text appears left, image right */
+.project-wide .project-content {
+    flex-direction: row-reverse;
+}
+
+/* Narrow card: row-reverse so text appears left, image right */
+.project-narrow .project-content {
+    flex-direction: row-reverse;
+}
+
+/* All card images get rounded corners */
+.project-featured .project-image img,
+.project-wide .project-image img,
+.project-narrow .project-image img {
+    border-radius: 10px;
+}
+
+/* Shared */
 .project-tags {
     display: flex;
     flex-wrap: wrap;
@@ -159,10 +214,6 @@ a {
     border-radius: 8px;
 }
 
-.project-image {
-    flex: 1;
-}
-
 .project-image a {
     display: block;
     transition: opacity 0.3s ease;
@@ -176,11 +227,6 @@ a {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 2px;
-}
-
-.project.reverse .project-content {
-    flex-direction: row-reverse;
 }
 
 .project h2 {
@@ -206,17 +252,6 @@ a {
     margin-bottom: 2rem;
 }
 
-.read-more {
-    font-size: 1.0625rem;
-    color: #2B689C;
-    font-weight: 400;
-    display: inline-block;
-}
-
-.read-more:hover {
-    color: #1e4a6d;
-    text-decoration: underline;
-}
 
 /* Footer */
 .footer {
@@ -234,7 +269,13 @@ a {
 .copyright {
     font-size: 0.9375rem;
     color: #aaa;
-    font-weight: 300;
+    font-weight: 400;
+}
+
+.claude-icon {
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
 }
 
 .social-links {
@@ -263,12 +304,12 @@ a {
         padding: 8rem 0 6rem;
     }
 
-    .project-content {
+    .project-featured .project-content {
         gap: 2rem;
     }
 
-    .project {
-        margin-bottom: 10rem;
+    .projects-grid {
+        gap: 1rem;
     }
 }
 
@@ -301,21 +342,27 @@ a {
         font-size: 1.25rem;
     }
 
-    .project {
-        margin-bottom: 8rem;
+    /* Stack all cards to single column on tablet */
+    .project-featured .project-content,
+    .project-wide .project-content,
+    .project-narrow .project-content {
+        flex-direction: column !important;
+        gap: 2rem;
+        height: auto;
     }
 
-    .project-content {
-        flex-direction: column-reverse;
-        gap: 3rem;
+    .project-featured,
+    .project-wide,
+    .project-narrow {
+        padding: 2rem;
+        height: auto;
     }
 
-    .project.reverse .project-content {
-        flex-direction: column;
-    }
-
-    .project-text {
-        flex: 1;
+    .project-featured .project-text,
+    .project-wide .project-text,
+    .project-narrow .project-text,
+    .project-narrow .project-image {
+        flex: none;
     }
 
     .project h2 {
@@ -370,19 +417,12 @@ a {
         font-size: 1.125rem;
     }
 
-    .project {
-        margin-bottom: 5rem;
-    }
-
-    .project-content {
-        gap: 2rem;
-    }
-
     .project h2 {
         font-size: 1.5rem;
     }
 
-    .project p {
+    .project p,
+    .project-narrow p {
         font-size: 1rem;
     }
 
